@@ -24,5 +24,36 @@ module RazorpayIntegration
 
       handle_response(response)
     end
+
+    def edit(customer_id, name, contact, email)
+      end_point = "/customers/#{customer_id}"
+
+      body = {
+        name: name,
+        email: email,
+        contact: contact
+      }.to_json
+
+      response = HTTParty.put("#{BASE_URL}#{end_point}", options.merge(body: body))
+
+      handle_response(response)
+    end
+
+    def list(count = 10, skip = 0)
+      end_point = "/customers?count=#{count}&skip=#{skip}"
+
+      response = HTTParty.get("#{BASE_URL}#{end_point}", options)
+
+      handle_response(response)
+    end
+
+
+    def get(customer_id)
+      end_point = "/customers/#{customer_id}"
+
+      response = HTTParty.get("#{BASE_URL}#{end_point}", options)
+
+      handle_response(response)
+    end
   end
 end
