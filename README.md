@@ -1,8 +1,6 @@
 # RazorpayIntegration
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/razorpay_integration`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+RazorpayIntegration is a Ruby gem for integrating with the Razorpay API.
 
 ## Installation
 
@@ -20,24 +18,53 @@ Or install it yourself as:
 
     $ gem install razorpay_integration
 
+## Configuration
+
+You can configure the gem with your Razorpay API key and secret like this:
+
+```ruby
+RazorpayIntegration.configure do |config|
+  config.api_key = 'your_api_key'
+  config.api_secret = 'your_api_secret'
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+Here's how you can create a new customer:
 
-## Development
+```ruby
+customer = RazorpayIntegration::Customer.new
+response = customer.create('Customer Name', 'Customer Contact', 'customer@email.com')
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Directory Structure
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+- **lib/:**
+  Contains the main codebase for the gem.
+
+  - **razorpay_integration.rb:**
+    Main module file.
+
+  - **razorpay_integration/:**
+    Contains the classes that form the core functionality of the gem.
+
+        - **version.rb:**
+            Contains the version number of the gem.
+
+        - **configuration.rb:**
+            Contains the Configuration class for configuring the gem.
+
+        - **base.rb:**
+            Contains the Base class for making HTTP requests.
+
+        - **customer.rb:**
+            Contains the Customer class for creating customers.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/razorpay_integration. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nonuabi/razorpay_integration. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the RazorpayIntegration project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/razorpay_integration/blob/master/CODE_OF_CONDUCT.md).
