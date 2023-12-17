@@ -69,16 +69,13 @@ response = customer.get('customer_id')
   - **razorpay_integration/:**
     Contains the classes that form the core functionality of the gem.
 
-        - **version.rb:**
+    - **version.rb:**
             Contains the version number of the gem.
-
-        - **configuration.rb:**
+    - **configuration.rb:**
             Contains the Configuration class for configuring the gem.
-
-        - **base.rb:**
+    - **base.rb:**
             Contains the Base class for making HTTP requests.
-
-        - **customer.rb:**
+    - **customer.rb:**
             Contains the Customer class for creating customers.
 
 ## Contributing
