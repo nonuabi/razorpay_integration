@@ -82,6 +82,10 @@ response = customer.get('customer_id')
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/nonuabi/razorpay_integration. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Gem Published URL
+
+Find the published gem on [RubyGems.org](https://rubygems.org/gems/razorpay_integration).
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
