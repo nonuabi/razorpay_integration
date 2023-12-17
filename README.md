@@ -33,9 +33,29 @@ end
 
 Here's how you can create a new customer:
 
+**Create a new customer**
+
 ```ruby
 customer = RazorpayIntegration::Customer.new
 response = customer.create('Customer Name', 'Customer Contact', 'customer@email.com')
+```
+
+**Edit an existing customer**
+
+```ruby
+response = customer.edit('customer_id', 'New Customer Name', 'New Customer Contact', 'new_customer@email.com')
+```
+
+**List customers**
+
+```ruby
+response = customer.list(10, 0)
+```
+
+**Get a customer by ID**
+
+```ruby
+response = customer.get('customer_id')
 ```
 
 ## Directory Structure
